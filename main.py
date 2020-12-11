@@ -66,15 +66,17 @@ async def on_message(message):
             pass
         else:
             if number == last_number + 1:
+                asyncio.sleep(random.uniform(0, 2))
                 print(f"Sending -> {number+1}")
                 await channel.send(number+1)
                 last_number = number + 1
             elif last_number == 0:
+                asyncio.sleep(random.uniform(0, 2))
                 last_number = number + 1
                 print(f"Sending -> {number+1}")
                 await channel.send(number+1)
     await bot.process_commands(message)
-                
+
 
 
 
